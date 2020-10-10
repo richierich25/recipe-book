@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-12">
+    <img class="img-fluid img-thumbnail rounded" [src]="recipe.imagePath" alt="{{recipe.name}}">
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <h1 class="text-secondary">{{recipe.name}}</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <!-- Populating custom classes by using custom directives -->
+    <!-- adding 'appDropdown' class to the below div using custom directive appDropdown with Renderer and HostListener-->
+    <!-- adding 'appDropdown2' class using custom directive appDropdown with Hostbinding and HostListener-->
+    <div appDropdown appDropdown2 class="btn-group" role="group">
+      <button id="btnGroupDrop1" type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Manage Recipe
+      </button>
+      <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+        <a class="dropdown-item" href="javascript:void(0)" (click)="onAddToShoppingList()">Add To Shopping List</a>
+        <a class="dropdown-item" href="javascript:void(0)" (click)="onEditRecipe()">Edit Recipe</a>
+        <a class="dropdown-item" href="javascript:void(0)" (click)="onDeleteRecipe()">Delete Recipe</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <h3 class="text-secondary">{{recipe.description}}</h3>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <h3 class="text-secondary">Ingredients</h3>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let ingredient of recipe.ingredients">{{ingredient.name}} ({{ingredient.amount}})</li>
+    </ul>
+  </div>
+</div>

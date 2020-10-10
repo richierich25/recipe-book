@@ -1,0 +1,37 @@
+ <!-- ng-template being used with the appPlaceholder directive to mark the place in DOM to insert dynamically generated component -->
+<!-- <ng-template appPlaceholder></ng-template>  -->
+
+<div class="container">
+  <div class="row">
+    <!-- <div class="col-12 alert alert-danger" *ngIf="errorData" role="alert">
+      <p>{{errorData}}</p>
+    </div> -->
+    <app-alert [message]="errorData" (closeModal)="closeAlert()" *ngIf="errorData"></app-alert>
+
+    <div class="col col-md-6 col-md-offset-3">
+      <div *ngIf="isLoading" class="text-center">
+        <app-loading-spinner></app-loading-spinner>
+      </div>
+      <form (ngSubmit)="onSubmit(form)" #form="ngForm" *ngIf="!isLoading">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" name="email" #email="ngModel" [ngModel]="'test@gmail.com'"
+            required email>
+          <small id="emailHelp" class="form-text text-danger" *ngIf="!email.valid && email.touched">Please enter a
+            Valid Email!</small>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" name="password" #password="ngModel" [ngModel]="'richard'"
+            required minlength="6">
+          <small id="emailHelp" class="form-text text-danger" *ngIf="!password.valid && password.touched">Please
+            enter a Valid Password!</small>
+        </div>
+        <button type="submit" class="btn btn-primary mx-2"
+          [disabled]="!form.valid && form.touched">{{ isLoginMode ? 'Login' : 'Sign Up'}}</button>
+        <button type="button" class="btn btn-primary mx-2" (click)="onSwitchMode()">Switch to
+          {{ isLoginMode ? 'Sign-Up' : 'Login Now'}} </button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<a href="javascript:void(0)" [routerLink]="['./', index]" routerLinkActive="active" class="d-flex justify-content-between text-decoration-none stretched-link list-group-item list-group-item-action">
+  <div>
+    <h4 class="h4">{{recipe.name}}</h4>
+    <p class="text-dark">{{recipe.description}}</p>
+  </div>
+
+  <div class="p-2">
+    <img class="img-fluid img-thumbnail rounded" [src]="recipe.imagePath" alt="{{recipe.name}}">
+  </div>
+</a>
+
+
