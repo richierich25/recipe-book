@@ -3,10 +3,10 @@
     <img alt="Richard Abraham | Website" src="https://user-images.githubusercontent.com/34006942/95367062-e827e000-08f1-11eb-8e6a-b28b6d0e9690.png" title="Richard Abraham | Website" align="right" width="200px" />
 </a>
 
-⚡️ Fit Rich ⚡️
+⚡️ Recipe Book ⚡️
 ======================
 
-<h4 align="center">A fitness tracker application built on Angular on Firebase
+<h4 align="center">Record your favourite recipes and ingredients in your personal recipe book
 </h4>
 
 <div align="center"> 
@@ -41,7 +41,7 @@
   <br>
 
   <p>
-    A Fitness Tracker application that is built for users to record their personal workouts on a daily basis. Supports viewing of past workouts and estimating total calories burnt.
+    Allows users to track and create delicious recipes by recording its details including ingredients and quantity. Includes a shopping list for maintaing ingredients to be purchased.
   </p>
   <br>
 
