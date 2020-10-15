@@ -6,6 +6,21 @@ const { argv } = require('yargs');
 require('dotenv').config(); // read the env variables from .env file
 const environment = argv.environment; // read the command line arguments passed with yargs
 
+// write the content to the respective file;
+// create a file if no file exists
+function writeFileUsingFS(targetPath, environmentFileContent) {
+  writeFile(targetPath, environmentFileContent, function (err) {
+    if (err) {
+      console.log(err);
+    }
+    if (environmentFileContent !== "") {
+      console.log(`wrote variables to ${targetPath}`);
+    }
+  });
+};
+writeFileUsingFS('./src/environments/environment.prod.ts', ''); //creating environment.prod.ts file
+writeFileUsingFS('./src/environments/environment.ts', '');//creating environment.ts file
+
 const isProduction = environment === 'prod'; // as `--environment=prod` option provided
 const targetPath = isProduction
   ? './src/environments/environment.prod.ts'
@@ -19,11 +34,6 @@ const environmentFileContent = `
   };
 `; //content to be compiled dynamically and pasted into respective environment files
 
-// write the content to the respective file
-writeFile(targetPath, environmentFileContent, function (err) {
-  if (err) {
-    console.log(err);
-  }
-  console.log(`wrote variables to ${targetPath}`);
-});
+writeFileUsingFS(targetPath, environmentFileContent); // appending data
+
 /* tslint:enable */
