@@ -1,12 +1,12 @@
-name: PR build
+name: PR build & deploy
 
 on:
   pull_request:
     branches: [ main ]
 
 jobs:
-  pr-build:
-    name: Build Project
+  pr-build-deploy:
+    name: PR build and deploy for recipe-book
     runs-on: ubuntu-latest
 
     steps:
@@ -30,3 +30,12 @@ jobs:
 
       - name: Build Website
         run: npm run build
+
+      # - name: Deploy to Firebase
+      #   uses: FirebaseExtended/action-hosting-deploy@v0
+      #   with:
+      #     repoToken: '${{ secrets.GITHUB_TOKEN }}'
+      #     firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_RICHARDS_72D43 }}'
+      #     projectId: richards-72d43
+      #   env:
+      #     FIREBASE_CLI_PREVIEWS: hostingchannels
