@@ -71,7 +71,9 @@ You will need the below installed on your computer
 ```sh
 $ git clone https://github.com/richierich25/recipe-book.git
 $ cd recipe-book
-$ npm i 
+$ npm run start // to serve the project locally
+$ npm run build // to build the project in production mode
+$ firebase deploy // to deploy the project to firebase
 ```
 
 ## 💨 Configuration
@@ -80,7 +82,8 @@ $ npm i
 
 ## 🖥️ Deployment
 
-
+- Post successful deployment, any commits into the project, will be picked up by github actions and the project will be built and deployed automatically.
+- Any PR on merging will perform automatic build as well.
 
 ## 🛠️ Technology Used
 
