@@ -6,7 +6,7 @@ on:
 
 jobs:
   pr-build-deploy:
-    name: Build Project
+    name: PR build and deploy for recipe-book
     runs-on: ubuntu-latest
 
     steps:
