@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "richards-72d43"
+  },
+  "targets": {
+    "richards-72d43": {
+      "hosting": {
+        "recipe": [
+          "richards-72d43"
+        ]
+      }
+    }
+  }
+}
