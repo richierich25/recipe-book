@@ -148,7 +148,7 @@ testem.log
 .DS_Store
 Thumbs.db
 
-# Angular Environment Variables in .gitignore
+# Angular Environment Variables
 
 environment.prod.ts
 environment.ts
